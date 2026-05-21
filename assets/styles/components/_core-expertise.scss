@@ -1,0 +1,184 @@
+@use "mixins" as *;
+
+#core-expertise{
+    
+
+    .place-for-pagination{
+        margin-top: 20px;
+    }
+    .swiper-slide{
+        width: fit-content!important;
+
+    }
+    .card-service{
+
+        width: 736px;
+        position: relative;
+        padding: 13% 15%;
+        margin: 20px;
+        @include mobile{
+            width: 322px;
+            margin: 57px 20px;
+        }
+            
+
+       
+        .layer-bg{
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            img{
+                height: 100%;
+                width: 100%;
+                scale: 1.15;
+
+                &.mobile{
+                    display: none;
+                    @include mobile{
+                        display: block;
+                         scale: 1.4;
+                    }
+                }
+                &.desktop{
+                    @include mobile{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+            
+
+        }
+
+        .card-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 17px;
+            .card-icon{
+                @include glass-effect(20px);
+                width: 64px;
+                height: 64px;
+
+                @include mobile{
+                    @include glass-effect(15px);
+                    width: 40px;
+                    height: 40px;
+                }
+
+                svg{
+                    @include mobile{
+                    height: 24px;
+                    width: 24px;
+                    }
+                }
+            }
+
+            h3{
+                font-weight: 500;
+                font-size: 48px;
+                @include mobile{
+                    font-size: 24px;
+                }
+            }
+
+            p{
+                font-weight: 300;
+                font-size: 20px;
+                @include mobile{
+                    font-size: 15px;
+                }
+            }
+
+            .tags{
+                display: flex;
+                gap: 16px;
+
+                @include mobile{
+                    flex-direction: column;
+                }
+                .tag{
+                    @include glass-effect(3em);
+                    padding: 1em 2em;
+                    @include mobile{
+                       padding: 1em;
+                    }
+                }
+            }
+        }
+
+
+        .backdrop .shape {
+            position: absolute;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            filter: blur(20px);
+        }
+
+        .backdrop .shape.one {
+            width: 40svw;
+            background: rgba(153, 255, 204, 0.4);
+            transform: rotate(90deg) translate(45lvh, 5lvw);
+            animation: shape-one 7s ease-in-out infinite alternate;
+            animation-delay: -2s;
+        }
+
+        .backdrop .shape.two {
+            width: 25lvw;
+            background: rgba(255, 221, 153, 0.4);
+            transform: rotate(200deg) translate(-35lvh, 12lvw);
+            animation: shape-two 4s ease-in-out infinite alternate;
+            animation-delay: -1s;
+        }
+
+        .backdrop .shape.three {
+            width: 32svw;
+            background: rgba(153, 238, 255, 0.4);
+            transform: rotate(-165deg) translate(24lvh, -32lvw);
+            animation: shape-three 5s ease-in-out infinite alternate;
+            animation-delay: -3.5s;
+        }
+
+        .backdrop .shape.four {
+            width: 29svw;
+            background: rgba(240, 168, 192, 0.4);
+            transform: rotate(25deg) translate(-16lvh, -19lvw);
+            animation: shape-four 6s ease-in-out infinite alternate;
+            animation-delay: -1.8s;
+        }
+
+        .backdrop .shape.five {
+            width: 37svw;
+            background: rgba(255, 153, 179, 0.4);
+            transform: rotate(-55deg) translate(30lvh, 26lvw);
+            animation: shape-five 5.5s ease-in-out infinite alternate;
+            animation-delay: -0.4s;
+        }
+
+        .backdrop .shape.six {
+            width: 24svw;
+            background: rgba(153, 247, 255, 0.4);
+            transform: rotate(120deg) translate(-40lvh, 46lvw);
+            animation: shape-six 9.5s ease-in-out infinite alternate;
+            animation-delay: -7.4s;
+        }
+
+        .backdrop .shape.seven {
+            width: 31svw;
+            background: rgba(255, 196, 153, 0.4);
+            transform: rotate(-55deg) translate(-24lvh, 56lvw);
+            animation: shape-seven 15.5s ease-in-out infinite alternate;
+            animation-delay: -5.7s;
+        }
+
+
+
+}
+

@@ -1,0 +1,195 @@
+@use "mixins" as *;
+
+
+#marketing{
+
+    .container{
+        min-height: calc(90vh);
+        max-height: calc(90vh);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .top-part{
+        margin-top: 10%;
+
+        @include mobile{
+            margin-top: 23%;
+        }
+
+        .title-block{
+            @include mobile{
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    .bottom-part{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+
+    .author-block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        .text{
+            text-align: center;
+            font-weight: 400;
+            font-size: 16px;
+            font-style: Italic;
+        }
+
+        .author{
+            font-weight: 600;
+            font-size: 16px;
+            color:#57A6FB;
+        }
+    }
+
+    .arrow-bottom{
+        transform: rotate(270deg);
+    }
+
+
+    .container{
+        position: relative;
+        .pin{
+            position: absolute;
+            margin: auto;
+            z-index: -1;
+            max-width: 220px;
+            max-height: 220px;
+
+            &.pin-pack{
+                max-width: 450px;
+                max-height: 450px;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            &.pp-1{
+                width: 470px;
+                left: 0;
+                right: 0;
+                bottom: 17%;
+                z-index: -1;
+
+                @include mobile{
+                    width: 240px;
+                    top: 0;
+                }
+            }
+
+            &.pp-2{
+                width: 396px;
+                left: -3%;
+                bottom: 9%;
+                z-index: -2;
+                @include mobile{
+                    width: 160px;
+                    left: -8%;
+                    top: 18%;
+                }
+            }
+
+            &.pp-3{
+                width: 245px;
+                right: 3%;
+                bottom: 13%;
+                z-index: -4;
+                @include mobile{
+                    width: 128px;
+                    right: -10%;
+                    top: 35%;
+                }
+            }
+
+            &.p-1{
+                right: 0;
+                top: 0;
+                z-index: -4;
+                @include mobile{
+                    right: -23%;
+                }
+            }
+
+            &.p-2{
+                right: 19%;
+                top: 40%;
+                z-index: -5;
+                @include mobile{
+                    right: -3%;
+                    top: 39%;
+                }
+            }
+            &.p-3{
+                left: 3%;
+                top: 18%;
+                z-index: -6;
+                @include mobile{
+                    left: -21%;
+                }
+            }
+        }
+    }
+
+
+
+    //anim
+    .p-1{
+        transform: translate(50%,42%);
+    }
+    .p-2{
+        transform: translate(40%,-30%);
+    }
+    .p-3{
+        transform: translate(-53%,20%);
+    }
+
+    .pp-1{
+        transform: scale(0.6) translate(0,-5%) rotate(-12deg);
+    }
+    .pp-2{
+        transform: scale(0.6) translate(13%,0) rotate(4deg);
+    }
+    .pp-3{
+        transform: scale(0.6) translate(-6%,0) rotate(8deg);
+    }
+
+    .pin{
+        transition: 1.8s transform  ease 0.5s;
+    }
+
+
+    &.anim{
+        .p-1{
+            transform: translate(0,0);
+        }
+        .p-2{
+            transform: translate(0,0);
+        }
+        .p-3{
+            transform: translate(0,0);
+        }
+
+        .pp-1{
+            transform: scale(1) translate(0,0) rotate(16.8deg);
+        }
+        .pp-2{
+            transform: scale(1) translate(0,0) rotate(-15deg);
+        }
+        .pp-3{
+            transform: scale(1) translate(0,0) rotate(-7deg);
+        }
+    }
+}

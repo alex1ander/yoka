@@ -1,0 +1,133 @@
+@use "mixins" as *;
+
+
+#attention{
+
+    .attention-wrapper{
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 40px;
+        margin: 120px 0px;
+
+        @include tablet{
+            grid-template-columns: 1fr; 
+            gap: 160px;
+        }
+
+        @include mobile{
+            grid-template-columns: 1fr; 
+            gap: 160px;
+            margin: 160px 0px 20px;
+        }
+    }
+
+    .phone-part{
+        @include glass-effect(30px);
+        overflow: visible;
+        padding: 20px;
+        padding-left: 0;
+        position: relative;
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 5fr 4fr; 
+
+
+        @include mobile{
+            grid-template-columns: 1fr; 
+            grid-template-rows: 1fr 1fr; 
+            padding-left: 20px;
+            gap: 24px;
+        }
+
+
+        .info-part{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 100px;
+
+
+            @include mobile{
+                padding-bottom: 0px;
+            }
+        }
+
+        .text-part{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        h3{
+            font-weight: 500;
+            font-size: 32px;
+        }
+        p{
+            opacity: 0.7;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .benefit-list{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+            li{
+                display: flex;
+                justify-content: space-between;
+                .text{
+
+                }
+
+                .value{
+                    font-weight: 600;
+                    color: #57A6FB;
+                }
+            }
+        }
+
+        .text-anim{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .cirlce{
+                @include glass-effect();
+                justify-content: center;
+                background: rgb(255 255 255 / 12%);
+                padding: 13px;
+                max-height: 58px;
+                max-width: 58px;
+            }
+        }
+
+        .place-for-image{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            .phone-img{
+                position: absolute;
+                height: 150%;
+                width: auto;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                max-width: 100%;
+                object-fit: contain;
+
+                @include mobile{
+                    bottom: 0;
+                    top: auto;
+                }
+            }
+        }
+    }
+
+    .bg-image{
+        border-radius: 30px;
+    }
+}
