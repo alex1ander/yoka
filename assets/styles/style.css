@@ -2588,7 +2588,7 @@ body:has(#preloader.loaded) .place-for-btn {
   stroke: var(--way-color);
   transition: filter 0.4s ease;
 }
-#ways .ways-wrapper .way:hover .svg-way {
+#ways .ways-wrapper .way:hover .svg-way.way-desk {
   filter: drop-shadow(0 0 2px var(--way-color)) drop-shadow(0 0 4px var(--way-color)) drop-shadow(0 0 6px var(--way-color));
 }
 #ways .head-way-wrapper {
@@ -2673,6 +2673,9 @@ body:has(#preloader.loaded) .place-for-btn {
   justify-content: flex-end;
   gap: 20px;
   position: relative;
+}
+#ways .mobile .way-column:hover .svg-way {
+  filter: drop-shadow(0 0 2px var(--way-color)) drop-shadow(0 0 4px var(--way-color)) drop-shadow(0 0 6px var(--way-color));
 }
 #ways .mobile .way-column .svg-way-left {
   z-index: -1;

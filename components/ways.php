@@ -26,7 +26,7 @@
                                 <div class="option-way">Business Process Research</div>
                             </div>
                             <div class="head-way-wrapper">
-                                <object class="svg-way svg-way-pink" data="./assets/icons/way-pink.svg" type="image/svg+xml"></object>
+                                <object class="svg-way way-desk svg-way-pink" data="./assets/icons/way-pink.svg" type="image/svg+xml"></object>
                                 <div class="head-way">
                                     <div class="folder-block"></div>Research & Analytics
                                 </div>
@@ -49,7 +49,7 @@
                                 <div class="option-way">Business Process Research</div>
                             </div>
                             <div class="head-way-wrapper">
-                                <object class="svg-way svg-way-purple" data="./assets/icons/way-purple.svg" type="image/svg+xml"></object>
+                                <object class="svg-way way-desk svg-way-purple" data="./assets/icons/way-purple.svg" type="image/svg+xml"></object>
                                 <div class="head-way">
                                     <div class="folder-block"></div>Research & Analytics
                                 </div>
@@ -72,7 +72,7 @@
                                 <div class="option-way">Business Process Research</div>
                             </div>
                             <div class="head-way-wrapper">
-                                <object class="svg-way svg-way-orange" data="./assets/icons/way-orange.svg" type="image/svg+xml"></object>
+                                <object class="svg-way way-desk svg-way-orange" data="./assets/icons/way-orange.svg" type="image/svg+xml"></object>
                                 <div class="head-way">
                                     <div class="folder-block"></div>Research & Analytics
                                 </div>
@@ -95,7 +95,7 @@
                                 <div class="option-way">Business Process Research</div>
                             </div>
                             <div class="head-way-wrapper">
-                                <object class="svg-way svg-way-blue" data="./assets/icons/way-blue.svg" type="image/svg+xml"></object>
+                                <object class="svg-way way-desk svg-way-blue" data="./assets/icons/way-blue.svg" type="image/svg+xml"></object>
                                 <div class="head-way">
                                     <div class="folder-block"></div>Research & Analytics
                                 </div>
