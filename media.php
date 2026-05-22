@@ -19,6 +19,7 @@
         <?php include 'components/cap.php'; ?>
         <?php include 'components/ways.php'; ?>
         <?php include 'components/days.php'; ?>
+        <?php include 'components/create-studio.php'; ?>
     </main>
     <?php include './assets/icons/sprite.svg'; ?>
     <?php include 'footer.php'; ?>

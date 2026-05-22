@@ -2708,6 +2708,9 @@ body:has(#preloader.loaded) .place-for-btn {
   bottom: 100% !important;
 }
 
+#days {
+  margin-bottom: 120px;
+}
 #days .days-wrapper {
   width: 100%;
   overflow: hidden;
@@ -2826,6 +2829,99 @@ body:has(#preloader.loaded) .place-for-btn {
 #days .day.active .info {
   opacity: 1;
   transform: translateY(0);
+}
+
+#create-studio .bg-image.figure {
+  object-fit: contain;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: auto;
+  width: auto;
+}
+#create-studio .bg-image.creative {
+  height: fit-content;
+  top: auto;
+  bottom: 10%;
+}
+#create-studio .btn-transparent {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+#create-studio .btn-transparent span {
+  font-weight: 500;
+  font-size: 14px;
+}
+#create-studio .btn-transparent .circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 50%;
+}
+#create-studio .btn-transparent .circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 35%, rgba(255, 255, 255, 0.05) 60%, rgba(255, 255, 255, 0.6) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+#create-studio .btn-transparent .circle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+#create-studio .btn-transparent .circle {
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 13px;
+  max-height: 48px;
+  max-width: 48px;
+}
+#create-studio .bg-image {
+  width: 110%;
+  max-width: 110%;
+  margin-left: -5%;
+}
+#create-studio .swiper-slide {
+  width: fit-content !important;
+}
+#create-studio .create-card {
+  margin: 0 20px;
+}
+#create-studio .create-card .image-wrapper {
+  height: 463px;
+  width: 264px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+#create-studio .create-card .image-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#create-studio .create-card .card-text {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  margin-top: 18px;
 }
 
 * {
@@ -3211,8 +3307,9 @@ img {
   align-items: center;
   justify-content: center;
   margin-top: 40px;
+  gap: 48px;
 }
-.place-for-btn .btn {
+.place-for-btn .btn-shadow {
   -webkit-box-shadow: 0px 0px 50px 0px #57A6FB;
   box-shadow: 0px 0px 50px 0px #57A6FB;
 }

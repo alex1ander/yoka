@@ -1,6 +1,7 @@
 @use "mixins" as *;
 
 #days {
+    margin-bottom: 120px;
     .days-wrapper{
         width: 100%;
         overflow: hidden;

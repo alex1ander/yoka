@@ -245,6 +245,11 @@
 
         </div>
     </div>
+    <div class="place-for-btn">
+        <a href="#" class="btn btn--blue btn-hover">
+            Launch Campaign
+        </a>
+    </div>
 </section>
 
 
