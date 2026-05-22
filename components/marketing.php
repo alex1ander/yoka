@@ -28,7 +28,7 @@
 
             <div class="top-part">
                 <div class="title-block">
-                    <p class="capitalize">Revenue Growth Drivers</p>
+                    <p class="tt-none">Revenue Growth Drivers</p>
                     <h1>Marketing & Advertising</h1>
                 </div>
             </div>

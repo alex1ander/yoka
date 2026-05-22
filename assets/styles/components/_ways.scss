@@ -1,46 +1,68 @@
 @use "mixins" as *;
 
-#ways{
+#ways {
+
+    // colors
+    $pink: #F53EE1;
+    $purple: #6E35D9;
+    $orange: #FE9D4F;
+    $blue: #57A6FB;
 
 
-    .ways-wrapper{
-        display: grid; 
-        grid-auto-columns: 1fr; 
-        grid-template-columns: 1fr 1fr 1fr 1fr; 
-        gap: 0px 0px; 
+    .ways-wrapper {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
         position: relative;
 
-        .ways-circle{
+        .ways-circle {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             margin: auto;
-            transform: translate(0%,20%);
+            transform: translate(0%, 20%);
         }
 
-        .way{
+        .way {
             display: flex;
             flex-direction: column-reverse;
-            gap: 24px;
+            gap: 20px;
 
-            .head-way{
-                @include glass-effect(10px,5%,95%);
+            .head-way {
+                @include glass-effect(10px, 5%, 95%);
                 background: #0F0F0F33;
                 padding: 24px 16px;
 
-                .folder-block{
+                .folder-block {
                     height: 4px;
                     width: 100%;
                     position: absolute;
                     top: 0;
-                    left: 0;  
+                    left: 0;
                 }
             }
 
+            .option-way-wrapper {
+                position: relative;
 
-            .option-way{
-                @include glass-effect(35px,10%,90%);
+                &::after {
+                    content: '';
+                    height: 20px;
+                    width: 1px;
+                    background: $blue;
+                    position: absolute;
+                    z-index: -1;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+            }
+
+            .option-way {
+                @include glass-effect(35px, 10%, 90%);
                 font-weight: 400;
                 font-size: 14px;
                 padding: 14px 20px;
@@ -48,88 +70,114 @@
                 margin: auto;
             }
 
-            &.pink-way{
-                .option-way{
+            &.pink-way {
+                .option-way {
                     background: linear-gradient(0deg, rgba(245, 62, 225, 0.07), rgba(245, 62, 225, 0.07)),
                     linear-gradient(0deg, rgba(15, 15, 15, 0.2), rgba(15, 15, 15, 0.2));
                 }
-                .folder-block{
-                    background: #F53EE1;
+
+                .folder-block {
+                    background: $pink;
+                }
+
+                .option-way-wrapper {
+                    &::after {
+                        background: $pink;
+                    }
                 }
             }
 
-            &.purple-way{
-                .option-way{
-                   background: linear-gradient(0deg, rgba(103, 59, 215, 0.07), rgba(103, 59, 215, 0.07)),
+            &.purple-way {
+                .option-way {
+                    background: linear-gradient(0deg, rgba(103, 59, 215, 0.07), rgba(103, 59, 215, 0.07)),
                     linear-gradient(0deg, rgba(15, 15, 15, 0.2), rgba(15, 15, 15, 0.2));
                 }
-                .folder-block{
-                    background: #6E35D9;
+
+                .folder-block {
+                    background: $purple;
+                }
+
+                .option-way-wrapper {
+                    &::after {
+                        background: $purple;
+                    }
                 }
             }
 
-            &.orange-way{
-                .option-way{
+            &.orange-way {
+                .option-way {
                     background: linear-gradient(0deg, rgba(250, 156, 80, 0.07), rgba(250, 156, 80, 0.07)),
                     linear-gradient(0deg, rgba(15, 15, 15, 0.2), rgba(15, 15, 15, 0.2));
                 }
-                .folder-block{
-                    background: #FE9D4F;
+
+                .folder-block {
+                    background: $orange;
+                }
+
+                .option-way-wrapper {
+                    &::after {
+                        background: $orange;
+                    }
                 }
             }
 
-            &.blue-way{
-                .option-way{
+            &.blue-way {
+                .option-way {
                     background: #0F0F0F33;
                 }
-                .folder-block{
-                    background: #57A6FB;
+
+                .folder-block {
+                    background: $blue;
+                }
+
+                .option-way-wrapper {
+                    &::after {
+                        background: $blue;
+                    }
                 }
             }
         }
     }
 
-
-    .head-way-wrapper{
+    .head-way-wrapper {
         position: relative;
         width: fit-content;
         margin: auto;
-        .svg-way{
+
+        .svg-way {
             z-index: -1;
         }
-        .svg-way-pink{
+
+        .svg-way-pink {
             position: absolute;
             bottom: 50%;
             left: 100%;
             margin: auto;
         }
 
-        .svg-way-purple{
+        .svg-way-purple {
             position: absolute;
             top: 100%;
             left: 50%;
             margin: auto;
         }
 
-        .svg-way-orange{
+        .svg-way-orange {
             position: absolute;
             top: 100%;
             right: 50%;
             margin: auto;
         }
 
-        .svg-way-blue{
+        .svg-way-blue {
             position: absolute;
             bottom: 50%;
             right: 100%;
             margin: auto;
         }
-
     }
 
-
-    .side-way{
+    .side-way {
         margin-top: 50%;
     }
-
 }

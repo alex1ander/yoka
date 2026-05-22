@@ -2464,7 +2464,7 @@ body:has(#preloader.loaded) .place-for-btn {
 #ways .ways-wrapper .way {
   display: flex;
   flex-direction: column-reverse;
-  gap: 24px;
+  gap: 20px;
 }
 #ways .ways-wrapper .way .head-way {
   position: relative;
@@ -2507,6 +2507,21 @@ body:has(#preloader.loaded) .place-for-btn {
   position: absolute;
   top: 0;
   left: 0;
+}
+#ways .ways-wrapper .way .option-way-wrapper {
+  position: relative;
+}
+#ways .ways-wrapper .way .option-way-wrapper::after {
+  content: "";
+  height: 20px;
+  width: 1px;
+  background: #57A6FB;
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 #ways .ways-wrapper .way .option-way {
   position: relative;
@@ -2552,10 +2567,16 @@ body:has(#preloader.loaded) .place-for-btn {
 #ways .ways-wrapper .way.pink-way .folder-block {
   background: #F53EE1;
 }
+#ways .ways-wrapper .way.pink-way .option-way-wrapper::after {
+  background: #F53EE1;
+}
 #ways .ways-wrapper .way.purple-way .option-way {
   background: linear-gradient(0deg, rgba(103, 59, 215, 0.07), rgba(103, 59, 215, 0.07)), linear-gradient(0deg, rgba(15, 15, 15, 0.2), rgba(15, 15, 15, 0.2));
 }
 #ways .ways-wrapper .way.purple-way .folder-block {
+  background: #6E35D9;
+}
+#ways .ways-wrapper .way.purple-way .option-way-wrapper::after {
   background: #6E35D9;
 }
 #ways .ways-wrapper .way.orange-way .option-way {
@@ -2564,10 +2585,16 @@ body:has(#preloader.loaded) .place-for-btn {
 #ways .ways-wrapper .way.orange-way .folder-block {
   background: #FE9D4F;
 }
+#ways .ways-wrapper .way.orange-way .option-way-wrapper::after {
+  background: #FE9D4F;
+}
 #ways .ways-wrapper .way.blue-way .option-way {
   background: rgba(15, 15, 15, 0.2);
 }
 #ways .ways-wrapper .way.blue-way .folder-block {
+  background: #57A6FB;
+}
+#ways .ways-wrapper .way.blue-way .option-way-wrapper::after {
   background: #57A6FB;
 }
 #ways .head-way-wrapper {
@@ -2723,8 +2750,8 @@ img {
     font-size: 15px;
   }
 }
-.title-block p.capitalize {
-  text-transform: capitalize;
+.title-block p.tt-none {
+  text-transform: none;
 }
 
 .bg-image-container {

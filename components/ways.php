@@ -19,10 +19,18 @@
                                 <div class="folder-block"></div>Research & Analytics
                             </div>
                         </div>
-                        <div class="option-way">Audience Analytics</div>
-                        <div class="option-way">Target Persona Creation</div>
-                        <div class="option-way">Product Marketing Research</div>
-                        <div class="option-way">Business Process Research</div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Audience Analytics</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Target Persona Creation</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Product Marketing Research</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Business Process Research</div>
+                        </div>
                     </div>
                 </div>
 
@@ -34,10 +42,18 @@
                                 <div class="folder-block"></div>Research & Analytics
                             </div>
                         </div>
-                        <div class="option-way">Audience Analytics</div>
-                        <div class="option-way">Target Persona Creation</div>
-                        <div class="option-way">Product Marketing Research</div>
-                        <div class="option-way">Business Process Research</div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Audience Analytics</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Target Persona Creation</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Product Marketing Research</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Business Process Research</div>
+                        </div>
                     </div>
                 </div>
 
@@ -49,10 +65,18 @@
                                 <div class="folder-block"></div>Research & Analytics
                             </div>
                         </div>
-                        <div class="option-way">Audience Analytics</div>
-                        <div class="option-way">Target Persona Creation</div>
-                        <div class="option-way">Product Marketing Research</div>
-                        <div class="option-way">Business Process Research</div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Audience Analytics</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Target Persona Creation</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Product Marketing Research</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Business Process Research</div>
+                        </div>
                     </div>
                 </div>
 
@@ -64,10 +88,18 @@
                                 <div class="folder-block"></div>Research & Analytics
                             </div>
                         </div>
-                        <div class="option-way">Audience Analytics</div>
-                        <div class="option-way">Target Persona Creation</div>
-                        <div class="option-way">Product Marketing Research</div>
-                        <div class="option-way">Business Process Research</div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Audience Analytics</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Target Persona Creation</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Product Marketing Research</div>
+                        </div>
+                        <div class="option-way-wrapper">
+                            <div class="option-way">Business Process Research</div>
+                        </div>
                     </div>
                 </div>
             </div>
