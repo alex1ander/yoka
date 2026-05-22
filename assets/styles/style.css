@@ -2710,9 +2710,10 @@ body:has(#preloader.loaded) .place-for-btn {
 
 #days .days-wrapper {
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
   display: flex;
   gap: 20px;
+  will-change: scroll-position;
 }
 #days .days-wrapper .day {
   display: flex;
@@ -2793,6 +2794,37 @@ body:has(#preloader.loaded) .place-for-btn {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
+}
+#days .days-progress {
+  position: relative;
+  margin-top: 20px;
+  height: 4px;
+}
+#days .days-progress__line {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+#days .days-progress__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: #2CFF24;
+  box-shadow: 0 0 10px #2CFF24;
+  border-radius: 999px;
+  transition: width 0.05s linear;
+}
+#days .day {
+  opacity: 0.2;
+  transform: translateY(10px);
+  transition: 0.4s ease;
+}
+#days .day.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 * {

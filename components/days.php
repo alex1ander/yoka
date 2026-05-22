@@ -30,6 +30,11 @@
                 <?php endfor; ?>
             </div>
 
+            <div class="days-progress">
+    <div class="days-progress__line"></div>
+    <div class="days-progress__fill"></div>
+</div>
+
         </div>
     </div>
 </section>
