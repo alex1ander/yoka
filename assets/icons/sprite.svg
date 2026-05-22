@@ -156,4 +156,13 @@
         <path d="M14 8.79V15.22C14 15.61 14.42 15.85 14.75 15.65L15.85 15.01C18.72 13.36 18.72 10.64 15.85 8.99L14.75 8.35C14.42 8.16 14 8.4 14 8.79Z" fill="white"/>
     </symbol>
 
+
+    <svg id="way-right" width="7" height="51" viewBox="0 0 7 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0.5C3.31371 0.5 6 3.18629 6 6.5V50.5"/>
+    </svg>
+
+    <svg id="way-left" width="7" height="51" viewBox="0 0 7 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.5 0.5C3.18629 0.5 0.5 3.18629 0.5 6.5V50.5"/>
+    </svg>
+
 </svg>

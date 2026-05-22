@@ -8,6 +8,17 @@
     $orange: #FE9D4F;
     $blue: #57A6FB;
 
+    .ways-circle {
+        width: 100%;
+        max-width: 402px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: translate(0%, 20%);
+        filter: drop-shadow(0 0 2rem $blue);
+    }
 
     .ways-wrapper {
         display: grid;
@@ -16,24 +27,24 @@
         gap: 0px 0px;
         position: relative;
 
-        .ways-circle {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            transform: translate(0%, 20%);
-        }
-
         .way {
+            // Цвет задаётся один раз здесь ↓
+            --way-color: #{$blue}; // дефолт
+
+            &.pink-way   { --way-color: #{$pink}; }
+            &.purple-way { --way-color: #{$purple}; }
+            &.orange-way { --way-color: #{$orange}; }
+            &.blue-way   { --way-color: #{$blue}; }
+
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
             gap: 20px;
 
             .head-way {
                 @include glass-effect(10px, 5%, 95%);
                 background: #0F0F0F33;
-                padding: 24px 16px;
+                padding: 16px;
+                text-align: center;
 
                 .folder-block {
                     height: 4px;
@@ -41,109 +52,78 @@
                     position: absolute;
                     top: 0;
                     left: 0;
+                    background: var(--way-color); // ← было дублировано 4 раза
                 }
             }
 
             .option-way-wrapper {
                 position: relative;
-
+                width: fit-content;
+                margin: 0 auto;
                 &::after {
                     content: '';
                     height: 20px;
                     width: 1px;
-                    background: $blue;
+                    background: var(--way-color); // ← было дублировано 4 раза
                     position: absolute;
                     z-index: -1;
                     top: 100%;
                     left: 0;
                     right: 0;
                     margin: auto;
+                    transition: box-shadow 0.4s ease;
+                }
+
+                &:hover{
+                    &::after {
+                        box-shadow: 0px 0px 10px 4px var(--way-color);
+                    }
+                    ~ ::after {
+                        box-shadow: 0px 0px 10px 4px var(--way-color);
+                    }
+
+                }
+
+                @include mobile {
+                    &:last-child::after {
+                        display: none;
+                    }
                 }
             }
 
             .option-way {
                 @include glass-effect(35px, 10%, 90%);
+                // Один фон вместо четырёх блоков
+                background: color-mix(in srgb, var(--way-color) 7%, #0F0F0F33);
                 font-weight: 400;
                 font-size: 14px;
+                text-align: center;
                 padding: 14px 20px;
                 width: fit-content;
                 margin: auto;
             }
 
-            &.pink-way {
-                .option-way {
-                    background: linear-gradient(0deg, rgba(245, 62, 225, 0.07), rgba(245, 62, 225, 0.07)),
-                    linear-gradient(0deg, rgba(15, 15, 15, 0.2), rgba(15, 15, 15, 0.2));
-                }
-
-                .folder-block {
-                    background: $pink;
-                }
-
-                .option-way-wrapper {
-                    &::after {
-                        background: $pink;
-                    }
-                }
+            .svg-way {
+                stroke: var(--way-color); // ← было дублировано 4 раза
+                transition: filter 0.4s ease;
             }
-
-            &.purple-way {
-                .option-way {
-                    background: linear-gradient(0deg, rgba(103, 59, 215, 0.07), rgba(103, 59, 215, 0.07)),
-                    linear-gradient(0deg, rgba(15, 15, 15, 0.2), rgba(15, 15, 15, 0.2));
-                }
-
-                .folder-block {
-                    background: $purple;
-                }
-
-                .option-way-wrapper {
-                    &::after {
-                        background: $purple;
-                    }
-                }
-            }
-
-            &.orange-way {
-                .option-way {
-                    background: linear-gradient(0deg, rgba(250, 156, 80, 0.07), rgba(250, 156, 80, 0.07)),
-                    linear-gradient(0deg, rgba(15, 15, 15, 0.2), rgba(15, 15, 15, 0.2));
-                }
-
-                .folder-block {
-                    background: $orange;
-                }
-
-                .option-way-wrapper {
-                    &::after {
-                        background: $orange;
-                    }
-                }
-            }
-
-            &.blue-way {
-                .option-way {
-                    background: #0F0F0F33;
-                }
-
-                .folder-block {
-                    background: $blue;
-                }
-
-                .option-way-wrapper {
-                    &::after {
-                        background: $blue;
-                    }
+            &:hover{
+                .svg-way {
+                   filter:
+                        drop-shadow(0 0 2px var(--way-color))
+                        drop-shadow(0 0 4px var(--way-color))
+                        drop-shadow(0 0 6px var(--way-color));
                 }
             }
         }
     }
 
+    // ... остальной код без изменений
     .head-way-wrapper {
         position: relative;
         width: fit-content;
         margin: auto;
-
+        grid-area: head-way; 
         .svg-way {
             z-index: -1;
         }
@@ -180,4 +160,109 @@
     .side-way {
         margin-top: 50%;
     }
+
+
+
+    //mobile
+    .mobile{
+
+
+        .way{
+            display: grid; 
+            grid-auto-columns: 1fr; 
+            grid-template-columns: auto auto; 
+            grid-template-rows: 104px auto; 
+            gap: 0px 32px; 
+            grid-template-areas: 
+                "head-way head-way"
+                ". ."; 
+        }
+
+        .head-way-wrapper{
+            width: 51%;
+        }
+        .place-for-way{
+            margin-bottom: 40px;
+        }
+
+        .ways-circle{
+            position: static;
+            transform: translate(0%, 11%);
+            width: 100%;
+
+            &::after{
+                content: '';
+                background: red;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                background: rebeccapurple;
+                height: 200dvh;
+                width: 2px;
+                height: unset;
+            }
+        }
+        .ways-wrapper{
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            .way{
+                flex-direction: column;
+            }
+        }
+
+        .way-column{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+            gap: 20px;
+
+            position: relative;
+            .svg-way-left{
+                z-index: -1;
+                position: absolute;
+                left: 50%;
+                bottom: 100%;
+            }
+            .svg-way-right{
+                z-index: -1;
+                position: absolute;
+                right: 50%;
+                bottom: 100%;
+            }
+        }
+
+        .place-for-way{
+            margin-top: 20px;
+                &:last-child{
+                    position: relative;
+
+                    .head-way-wrapper::before{
+                        content: '';
+                        width: 1px;
+                        height: 2000px;
+                        position: absolute;
+                        z-index: -1;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        background: #F6FBFF30;
+                    }
+            }
+        }
+
+        .option-way-wrapper{
+            &::after{
+                top: unset!important;
+                bottom: 100%!important;
+            }
+        }
+
+    }
+
+
+
 }

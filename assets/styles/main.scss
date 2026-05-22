@@ -362,3 +362,17 @@ img{
         box-shadow: 0px 0px 50px 0px #57A6FB;
     }
 }
+
+.desktop {
+    display: block!important;
+    @include mobile {
+      display: none!important;
+    }
+}
+
+.mobile {
+    display: none!important;
+    @include mobile {
+      display: block!important;
+    }
+}
