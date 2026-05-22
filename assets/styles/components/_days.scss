@@ -90,13 +90,17 @@
 }
 
 .day {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: 0.4s ease;
+    .info{
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: 0.4s ease;
+    }
 
     &.active {
-        opacity: 1;
-        transform: translateY(0);
+        .info{
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 

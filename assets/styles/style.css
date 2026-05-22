@@ -2818,12 +2818,12 @@ body:has(#preloader.loaded) .place-for-btn {
   border-radius: 999px;
   transition: width 0.05s linear;
 }
-#days .day {
+#days .day .info {
   opacity: 0;
   transform: translateY(-20px);
   transition: 0.4s ease;
 }
-#days .day.active {
+#days .day.active .info {
   opacity: 1;
   transform: translateY(0);
 }
