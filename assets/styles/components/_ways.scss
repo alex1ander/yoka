@@ -9,6 +9,7 @@
     $blue: #57A6FB;
 
     .ways-circle {
+        display: flex;
         width: 100%;
         max-width: 402px;
         position: absolute;
@@ -66,7 +67,7 @@
                     width: 1px;
                     background: var(--way-color); // ← было дублировано 4 раза
                     position: absolute;
-                    z-index: -1;
+                    z-index: 1;
                     top: 100%;
                     left: 0;
                     right: 0;
@@ -188,7 +189,6 @@
         .ways-circle{
             position: static;
             transform: translate(0%, 11%);
-            width: 100%;
 
             &::after{
                 content: '';

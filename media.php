@@ -18,6 +18,7 @@
         <?php include 'components/attention.php'; ?>
         <?php include 'components/cap.php'; ?>
         <?php include 'components/ways.php'; ?>
+        <?php include 'components/days.php'; ?>
     </main>
     <?php include './assets/icons/sprite.svg'; ?>
     <?php include 'footer.php'; ?>
