@@ -1,35 +1,40 @@
 const wrapper = document.querySelector('.days-wrapper');
-const days = document.querySelectorAll('.day');
+const days = Array.from(document.querySelectorAll('.day'));
 const fill = document.querySelector('.days-progress__fill');
 
-let progress = 0;
-let speed = 0.4; // скорость движения
+const itemDuration = 0.8; // 0.5 сек на карточку
+const totalDuration = days.length * itemDuration; // общая длительность
 
-function loop() {
-    const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+let startTime = null;
 
-    // 1. авто-движение
-    progress += speed;
+function loop(timestamp) {
+    if (!startTime) startTime = timestamp;
 
-    if (progress > maxScroll) {
+    const elapsed = (timestamp - startTime) / 1000; // в секундах
+
+    // нормализованный прогресс 0..1
+    let progress = elapsed / totalDuration;
+
+    if (progress > 1) {
         progress = 0;
+        startTime = timestamp;
+        days.forEach(d => d.classList.remove('active'));
     }
 
-    wrapper.scrollLeft = progress;
+    const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
 
-    // 2. линия растёт слева направо (по прогрессу)
-    const percent = (progress / maxScroll) * 100;
-    fill.style.width = percent + '%';
+    // 1. плавный скролл (без накопления ошибок)
+    const scrollX = maxScroll * progress;
+    wrapper.scrollLeft = scrollX;
 
-    // 3. “проявление” карточек
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const revealPoint = wrapperRect.left + (wrapper.clientWidth * percent / 100);
+    // 2. прогресс бар
+    fill.style.width = (progress * 100) + '%';
 
-    days.forEach(day => {
-        const rect = day.getBoundingClientRect();
-        const dayCenter = rect.left + rect.width / 2;
+    // 3. появление карточек по времени (НЕ по scroll)
+    const itemsToShow = Math.floor(progress * days.length);
 
-        if (dayCenter < revealPoint) {
+    days.forEach((day, index) => {
+        if (index <= itemsToShow) {
             day.classList.add('active');
         } else {
             day.classList.remove('active');
@@ -39,4 +44,4 @@ function loop() {
     requestAnimationFrame(loop);
 }
 
-loop();
+requestAnimationFrame(loop);

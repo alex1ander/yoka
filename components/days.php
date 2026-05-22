@@ -10,7 +10,7 @@
 
         <div class="content">
             <div class="days-wrapper">
-                <?php for($i = 0;$i < 14; $i++): ?>
+                <?php for($i = 0;$i < 10; $i++): ?>
                 <div class="day">
                     <div class="info">
                         <div class="row">

@@ -2797,7 +2797,7 @@ body:has(#preloader.loaded) .place-for-btn {
 }
 #days .days-progress {
   position: relative;
-  margin-top: 20px;
+  margin-top: 40px;
   height: 4px;
 }
 #days .days-progress__line {
@@ -2812,14 +2812,15 @@ body:has(#preloader.loaded) .place-for-btn {
   top: 0;
   height: 100%;
   width: 0%;
-  background: #2CFF24;
-  box-shadow: 0 0 10px #2CFF24;
+  background: linear-gradient(90deg, #396CA3 0%, #DEEEFF 100%);
+  box-shadow: 0 0 4px 4px #396CA3;
+  filter: blur(1px);
   border-radius: 999px;
   transition: width 0.05s linear;
 }
 #days .day {
-  opacity: 0.2;
-  transform: translateY(10px);
+  opacity: 0;
+  transform: translateY(-20px);
   transition: 0.4s ease;
 }
 #days .day.active {
