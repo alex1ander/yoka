@@ -21,6 +21,9 @@
         <?php include 'components/days.php'; ?>
         <?php include 'components/create-studio.php'; ?>
         <?php include 'components/workflow.php'; ?>
+        <?php include 'components/growth.php'; ?>
+        <?php include 'components/about-us.php'; ?>
+        <?php include 'components/faq.php'; ?>
     </main>
     <?php include './assets/icons/sprite.svg'; ?>
     <?php include 'footer.php'; ?>

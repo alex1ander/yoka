@@ -130,4 +130,25 @@
     .bg-image{
         border-radius: 30px;
     }
+
+
+.slow-anim{
+    animation: slowOpacity 5.2s infinite;
+}
+
+.fast-anim{
+    animation: fastOpacity 100ms infinite;
+}
+
+@keyframes slowOpacity{
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes fastOpacity{
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
+}
 }

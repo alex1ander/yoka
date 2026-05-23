@@ -127,53 +127,49 @@
                 }
             }
         }
-        
+    }
 
-            
+    .review-content{
+        margin: 10%;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
 
-        }
 
-        .review-content{
-            margin: 10%;
-            margin-right: 0;
+        .review-part{
             display: flex;
             flex-direction: column;
-            gap: 24px;
-
-
-            .review-part{
+            gap: 8px;
+            .stars{
                 display: flex;
-                flex-direction: column;
-                gap: 8px;
-                .stars{
-                    display: flex;
-                    align-items: center;
+                align-items: center;
 
-                    .rating{
-                        margin-left: 8px;
-                        font-size: 15px;
-                        font-weight: 600;
-                    }
-                }
-
-                .name{
+                .rating{
+                    margin-left: 8px;
+                    font-size: 15px;
                     font-weight: 600;
-                    font-size: 24px;
-                }
-
-                .role{
-                    opacity: 0.5;
-                    font-weight: 400;
-                    font-size: 15px;
-                }
-
-                .review-text{
-                    font-weight: 300;
-                    font-size: 15px;
                 }
             }
 
+            .name{
+                font-weight: 600;
+                font-size: 24px;
+            }
+
+            .role{
+                opacity: 0.5;
+                font-weight: 400;
+                font-size: 15px;
+            }
+
+            .review-text{
+                font-weight: 300;
+                font-size: 15px;
+            }
         }
+
+    }
     
 
 }

@@ -1,0 +1,59 @@
+@use "mixins" as *;
+
+#growth {
+
+
+    .swiper-slide{
+        width: fit-content !important;
+    }
+
+    .growth-swiper-button-prev{
+        position: absolute;
+        display: flex;
+        aspect-ratio: 1;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 44px;
+        z-index: 10;
+        left: 20px;
+    }
+
+    .growth-swiper-button-next{
+        position: absolute;
+        display: flex;
+        aspect-ratio: 1;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 44px;
+        z-index: 10;
+        right: 20px;
+    }
+
+
+
+    .card-software{
+        width: 666px;
+        position: relative;
+    }
+
+
+    .swiper-slide{
+        margin: auto;
+    }
+    .card-image{
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        min-width: 360px;
+        img{
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+
+}

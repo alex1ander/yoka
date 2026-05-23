@@ -848,61 +848,6 @@ body:has(#preloader.loaded) .place-for-btn {
     padding: 1em;
   }
 }
-#core-expertise .backdrop .shape {
-  position: absolute;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  filter: blur(20px);
-}
-#core-expertise .backdrop .shape.one {
-  width: 40svw;
-  background: rgba(153, 255, 204, 0.4);
-  transform: rotate(90deg) translate(45lvh, 5lvw);
-  animation: shape-one 7s ease-in-out infinite alternate;
-  animation-delay: -2s;
-}
-#core-expertise .backdrop .shape.two {
-  width: 25lvw;
-  background: rgba(255, 221, 153, 0.4);
-  transform: rotate(200deg) translate(-35lvh, 12lvw);
-  animation: shape-two 4s ease-in-out infinite alternate;
-  animation-delay: -1s;
-}
-#core-expertise .backdrop .shape.three {
-  width: 32svw;
-  background: rgba(153, 238, 255, 0.4);
-  transform: rotate(-165deg) translate(24lvh, -32lvw);
-  animation: shape-three 5s ease-in-out infinite alternate;
-  animation-delay: -3.5s;
-}
-#core-expertise .backdrop .shape.four {
-  width: 29svw;
-  background: rgba(240, 168, 192, 0.4);
-  transform: rotate(25deg) translate(-16lvh, -19lvw);
-  animation: shape-four 6s ease-in-out infinite alternate;
-  animation-delay: -1.8s;
-}
-#core-expertise .backdrop .shape.five {
-  width: 37svw;
-  background: rgba(255, 153, 179, 0.4);
-  transform: rotate(-55deg) translate(30lvh, 26lvw);
-  animation: shape-five 5.5s ease-in-out infinite alternate;
-  animation-delay: -0.4s;
-}
-#core-expertise .backdrop .shape.six {
-  width: 24svw;
-  background: rgba(153, 247, 255, 0.4);
-  transform: rotate(120deg) translate(-40lvh, 46lvw);
-  animation: shape-six 9.5s ease-in-out infinite alternate;
-  animation-delay: -7.4s;
-}
-#core-expertise .backdrop .shape.seven {
-  width: 31svw;
-  background: rgba(255, 196, 153, 0.4);
-  transform: rotate(-55deg) translate(-24lvh, 56lvw);
-  animation: shape-seven 15.5s ease-in-out infinite alternate;
-  animation-delay: -5.7s;
-}
 
 #the-foundetion .tf-content {
   display: flex;
@@ -2345,6 +2290,34 @@ body:has(#preloader.loaded) .place-for-btn {
 #attention .bg-image {
   border-radius: 30px;
 }
+#attention .slow-anim {
+  animation: slowOpacity 5.2s infinite;
+}
+#attention .fast-anim {
+  animation: fastOpacity 100ms infinite;
+}
+@keyframes slowOpacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fastOpacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 #cap {
   overflow: hidden;
@@ -3097,6 +3070,51 @@ body:has(#preloader.loaded) .place-for-btn {
 #workflow .timeline-wrapper {
   position: relative;
   will-change: margin-left;
+}
+
+#growth .swiper-slide {
+  width: fit-content !important;
+}
+#growth .growth-swiper-button-prev {
+  position: absolute;
+  display: flex;
+  aspect-ratio: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 44px;
+  z-index: 10;
+  left: 20px;
+}
+#growth .growth-swiper-button-next {
+  position: absolute;
+  display: flex;
+  aspect-ratio: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 44px;
+  z-index: 10;
+  right: 20px;
+}
+#growth .card-software {
+  width: 666px;
+  position: relative;
+}
+#growth .swiper-slide {
+  margin: auto;
+}
+#growth .card-image {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  min-width: 360px;
+}
+#growth .card-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 * {

@@ -15,6 +15,7 @@
                     <img class="bg-image" src="./assets/images/phone-bg-1.png" alt="">
                     <div  class="place-for-image">
                         <img class="phone-img" src="./assets/images/phone-1.png" alt="">
+                        <img class="phone-img fast-anim" src="./assets/images/phone-2.png" alt="">
                     </div>
                     <div class="info-part">
                         <div class="text-part">
@@ -41,6 +42,7 @@
                     <img class="bg-image" src="./assets/images/phone-bg-2.png" alt="">
                     <div  class="place-for-image">
                         <img class="phone-img" src="./assets/images/phone-2.png" alt="">
+                        <img class="phone-img slow-anim" src="./assets/images/phone-1.png" alt="">
                     </div>
                     <div class="info-part">
                         <div class="text-part">
@@ -56,7 +58,7 @@
                             <div class="cirlce">
                                 <object data="./assets/icons/time.svg" type="image/svg+xml"></object>
                             </div>
-                            <span>50 ms</span>
+                            <span>2.6 s</span>
                         </div>
                     </div>
                 </div>

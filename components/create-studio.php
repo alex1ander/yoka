@@ -45,12 +45,12 @@
                         <?php endfor; ?>
                     </div>
 
-                    <div class="create-swiper-button-prev round-btn round-btn cp glass-effect">
+                    <div class="create-swiper-button-prev round-btn cp glass-effect">
                         <svg width="24" height="24">
                             <use href="#arrow-right"></use>
                         </svg>
                     </div>
-                    <div class="create-swiper-button-next round-btn round-btn cp glass-effect next-button">
+                    <div class="create-swiper-button-next round-btn cp glass-effect next-button">
                         <svg width="24" height="24">
                             <use href="#arrow-right"></use>
                         </svg>
