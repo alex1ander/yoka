@@ -157,12 +157,16 @@
     </symbol>
 
 
-    <svg id="way-right" width="7" height="51" viewBox="0 0 7 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="way-right" width="7" height="51" viewBox="0 0 7 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0.5C3.31371 0.5 6 3.18629 6 6.5V50.5"/>
-    </svg>
+    </symbol>
 
-    <svg id="way-left" width="7" height="51" viewBox="0 0 7 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="way-left" width="7" height="51" viewBox="0 0 7 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6.5 0.5C3.18629 0.5 0.5 3.18629 0.5 6.5V50.5"/>
-    </svg>
+    </symbol>
+
+    <symbol id="reck" width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 2C0 0.895429 0.895431 0 2 0H12C13.1046 0 14 0.89543 14 2V14.7304C14 15.2926 13.7634 15.8288 13.3481 16.2078L7.67403 21.385C7.2922 21.7334 6.7078 21.7334 6.32597 21.385L0.651946 16.2078C0.236635 15.8288 0 15.2926 0 14.7304V2Z" fill="#57A6FB"/>
+    </symbol>
 
 </svg>

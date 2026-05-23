@@ -20,6 +20,7 @@
         <?php include 'components/ways.php'; ?>
         <?php include 'components/days.php'; ?>
         <?php include 'components/create-studio.php'; ?>
+        <?php include 'components/workflow.php'; ?>
     </main>
     <?php include './assets/icons/sprite.svg'; ?>
     <?php include 'footer.php'; ?>

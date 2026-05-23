@@ -25,10 +25,10 @@
         </div>
     </div>
 
-    <div class="container container-full bg-image-container container-p0container container-full bg-image-container container-p0">
+    <div class="container container-full bg-image-container container-p0">
         <div class="content">
 
-            <div class="place-for-slider">
+            <div class="place-for-slider anim-place">
                 
                 <div class="swiper create-swiper">
                     <div class="swiper-wrapper">
@@ -43,7 +43,17 @@
                             </div>
                         </div>
                         <?php endfor; ?>
+                    </div>
 
+                    <div class="create-swiper-button-prev round-btn round-btn cp glass-effect">
+                        <svg width="24" height="24">
+                            <use href="#arrow-right"></use>
+                        </svg>
+                    </div>
+                    <div class="create-swiper-button-next round-btn round-btn cp glass-effect next-button">
+                        <svg width="24" height="24">
+                            <use href="#arrow-right"></use>
+                        </svg>
                     </div>
                 </div>
             </div>

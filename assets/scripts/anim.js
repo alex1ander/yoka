@@ -1,4 +1,4 @@
-const elements = document.querySelectorAll('#hero, #marketing'); // сюда добавляй свои id
+const elements = document.querySelectorAll('#hero, #marketing, #create-studio, #workflow'); // сюда добавляй свои id
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

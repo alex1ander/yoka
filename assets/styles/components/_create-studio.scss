@@ -1,7 +1,7 @@
 @use "mixins" as *;
 
 #create-studio{
-
+    overflow: hidden;
     .bg-image.figure{
         object-fit: contain;
         top: 0;
@@ -10,12 +10,12 @@
         margin: auto;
         bottom: auto;
         width: auto;
+        height: auto;
     }
 
     .bg-image.creative{
         height: fit-content;
-        top: auto;
-        bottom: 10%;
+        top: 180%;
     }
 
     .btn-transparent{
@@ -43,7 +43,6 @@
     }
 
 
-
     .swiper-slide{
         width: fit-content !important;
     }
@@ -55,10 +54,13 @@
             width: 264px;
             overflow: hidden;
             border-radius: 30px;
+            box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.6), inset -4px -4px 8px rgba(0, 0, 0, 0.35);
             img{
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
+                z-index: -1;
+                position: relative
             }
         }
         .card-text{
@@ -69,6 +71,47 @@
             text-align: center;
             width: 100%;
             margin-top: 18px;
+        }
+    }
+
+
+    .create-swiper-button-prev{
+        position: absolute;
+        display: flex;
+        aspect-ratio: 1;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 44px;
+        z-index: 10;
+        left: 20px;
+    }
+
+    .create-swiper-button-next{
+        position: absolute;
+        display: flex;
+        aspect-ratio: 1;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 44px;
+        z-index: 10;
+        right: 20px;
+    }
+
+
+
+    .anim-place{
+        transform: translate(0, 100%);
+        opacity: 0;
+        transition: 2.4s transform ease, 0.8s opacity ease;
+    }
+
+
+    &.anim{
+        .anim-place{
+            transform: translate(0, 0);
+            opacity: 1;
         }
     }
 }

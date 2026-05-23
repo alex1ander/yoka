@@ -1,0 +1,171 @@
+@use "mixins" as *;
+
+#workflow {
+    .place-for-btn{
+        margin-top: 0;
+    }
+
+    .title-block{
+        margin-bottom: 20px;
+    }
+
+    .workflow-wrapper{
+        overflow: hidden;
+        position: relative;
+        padding-top: 80px;
+
+        .player-line{
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: #57A6FB;
+        }
+
+
+        .cards-wrapper{
+            display: flex;
+
+            .workflow-card{
+                border-radius: 20px;
+                overflow: hidden;
+                margin: 0 20px;
+                width: 306px;
+                min-width: 306px;
+                background: #161616;
+                height: 406px;
+
+                .text-wrapper{
+                    padding: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                }
+
+                h4{
+                    font-weight: 500;
+                    font-size: 24px;
+                }
+
+                ul{
+                    margin-left: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    li::marker {
+                        color: #57A6FB;
+                    }
+                }
+
+                .text{
+                    opacity: 0.7;
+                    color: #fff;
+                    font-weight: 400;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+
+    .timeline-wrapper{
+        background: #ffffff1e;
+        display: flex;
+        margin-top: 60px;   
+
+        &::after{
+            content: '';
+            height: 2px;
+            width: 100%;
+            background: #F5F69D;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .time-block{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100px;
+            min-width: 100px;
+
+            .line{
+                width: 1px;
+                height: 18px;
+                background: #fff;
+                opacity: 0.4;
+            }
+
+            .minute-line{
+                width: 1px;
+                height: 43px;
+                background: #fff;
+                opacity: 0.4;
+                position: relative;
+
+                .minute-numer{
+                    transform: translate(-50%, 0);
+                    position: absolute;
+                    top: -24px;
+                    text-wrap: nowrap;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: fit-content;
+                }
+            }
+        }
+    }
+
+
+    .cards-wrapper,
+.timeline-wrapper,
+.player-line {
+    will-change: transform;
+}
+
+.card-wrapper {
+
+    .workflow-card{
+        border: 1px solid transparent;
+        transition: 0.3s transform ease, 0.3s border-color ease;
+    }
+    &.anim {
+        .workflow-card{
+            transform: translate(0, -20px);
+            border-color: #57A6FB;
+        }
+    }
+}
+
+.workflow-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.player-line {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    width: 2px;
+    height: 100%;
+    background: #57A6FB;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+
+    svg{
+        position: absolute;
+    }
+}
+
+.cards-wrapper,
+.timeline-wrapper {
+    position: relative;
+    will-change: margin-left;
+}
+}

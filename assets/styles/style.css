@@ -2831,6 +2831,9 @@ body:has(#preloader.loaded) .place-for-btn {
   transform: translateY(0);
 }
 
+#create-studio {
+  overflow: hidden;
+}
 #create-studio .bg-image.figure {
   object-fit: contain;
   top: 0;
@@ -2839,11 +2842,11 @@ body:has(#preloader.loaded) .place-for-btn {
   margin: auto;
   bottom: auto;
   width: auto;
+  height: auto;
 }
 #create-studio .bg-image.creative {
   height: fit-content;
-  top: auto;
-  bottom: 10%;
+  top: 180%;
 }
 #create-studio .btn-transparent {
   display: flex;
@@ -2908,11 +2911,14 @@ body:has(#preloader.loaded) .place-for-btn {
   width: 264px;
   overflow: hidden;
   border-radius: 30px;
+  box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.6), inset -4px -4px 8px rgba(0, 0, 0, 0.35);
 }
 #create-studio .create-card .image-wrapper img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  z-index: -1;
+  position: relative;
 }
 #create-studio .create-card .card-text {
   display: flex;
@@ -2922,6 +2928,175 @@ body:has(#preloader.loaded) .place-for-btn {
   text-align: center;
   width: 100%;
   margin-top: 18px;
+}
+#create-studio .create-swiper-button-prev {
+  position: absolute;
+  display: flex;
+  aspect-ratio: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 44px;
+  z-index: 10;
+  left: 20px;
+}
+#create-studio .create-swiper-button-next {
+  position: absolute;
+  display: flex;
+  aspect-ratio: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 44px;
+  z-index: 10;
+  right: 20px;
+}
+#create-studio .anim-place {
+  transform: translate(0, 100%);
+  opacity: 0;
+  transition: 2.4s transform ease, 0.8s opacity ease;
+}
+#create-studio.anim .anim-place {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+#workflow .place-for-btn {
+  margin-top: 0;
+}
+#workflow .title-block {
+  margin-bottom: 20px;
+}
+#workflow .workflow-wrapper {
+  overflow: hidden;
+  position: relative;
+  padding-top: 80px;
+}
+#workflow .workflow-wrapper .player-line {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: #57A6FB;
+}
+#workflow .workflow-wrapper .cards-wrapper {
+  display: flex;
+}
+#workflow .workflow-wrapper .cards-wrapper .workflow-card {
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 20px;
+  width: 306px;
+  min-width: 306px;
+  background: #161616;
+  height: 406px;
+}
+#workflow .workflow-wrapper .cards-wrapper .workflow-card .text-wrapper {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#workflow .workflow-wrapper .cards-wrapper .workflow-card h4 {
+  font-weight: 500;
+  font-size: 24px;
+}
+#workflow .workflow-wrapper .cards-wrapper .workflow-card ul {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#workflow .workflow-wrapper .cards-wrapper .workflow-card ul li::marker {
+  color: #57A6FB;
+}
+#workflow .workflow-wrapper .cards-wrapper .workflow-card .text {
+  opacity: 0.7;
+  color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+}
+#workflow .timeline-wrapper {
+  background: rgba(255, 255, 255, 0.1176470588);
+  display: flex;
+  margin-top: 60px;
+}
+#workflow .timeline-wrapper::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #F5F69D;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#workflow .timeline-wrapper .time-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100px;
+  min-width: 100px;
+}
+#workflow .timeline-wrapper .time-block .line {
+  width: 1px;
+  height: 18px;
+  background: #fff;
+  opacity: 0.4;
+}
+#workflow .timeline-wrapper .time-block .minute-line {
+  width: 1px;
+  height: 43px;
+  background: #fff;
+  opacity: 0.4;
+  position: relative;
+}
+#workflow .timeline-wrapper .time-block .minute-line .minute-numer {
+  transform: translate(-50%, 0);
+  position: absolute;
+  top: -24px;
+  text-wrap: nowrap;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+}
+#workflow .cards-wrapper,
+#workflow .timeline-wrapper,
+#workflow .player-line {
+  will-change: transform;
+}
+#workflow .card-wrapper .workflow-card {
+  border: 1px solid transparent;
+  transition: 0.3s transform ease, 0.3s border-color ease;
+}
+#workflow .card-wrapper.anim .workflow-card {
+  transform: translate(0, -20px);
+  border-color: #57A6FB;
+}
+#workflow .workflow-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+#workflow .player-line {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  width: 2px;
+  height: 100%;
+  background: #57A6FB;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
+#workflow .player-line svg {
+  position: absolute;
+}
+#workflow .cards-wrapper,
+#workflow .timeline-wrapper {
+  position: relative;
+  will-change: margin-left;
 }
 
 * {
@@ -3308,6 +3483,12 @@ img {
   justify-content: center;
   margin-top: 40px;
   gap: 48px;
+}
+@media (max-width: 768px) {
+  .place-for-btn {
+    flex-direction: column;
+    gap: 32px;
+  }
 }
 .place-for-btn .btn-shadow {
   -webkit-box-shadow: 0px 0px 50px 0px #57A6FB;
