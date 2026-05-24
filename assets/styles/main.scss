@@ -23,6 +23,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -386,7 +387,7 @@ img{
 }
 
 .desktop {
-    display: block!important;
+    display: flex!important;
     @include mobile {
       display: none!important;
     }
@@ -395,7 +396,7 @@ img{
 .mobile {
     display: none!important;
     @include mobile {
-      display: block!important;
+      display: flex!important;
     }
 }                
 .blue-text{

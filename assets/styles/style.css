@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap");
 #preloader {
   position: fixed;
   top: 0;
@@ -3072,12 +3073,28 @@ body:has(#preloader.loaded) .place-for-btn {
   will-change: margin-left;
 }
 
-#growth .swiper-slide {
-  width: fit-content !important;
+@media (max-width: 768px) {
+  #growth {
+    gap: 20px;
+  }
 }
-#growth .growth-swiper-button-prev {
+#growth .place-for-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  #growth .place-for-slider {
+    flex-direction: column-reverse;
+  }
+}
+#growth .growth-swiper-button-prev, #growth .growth-main-swiper-button-prev {
   position: absolute;
   display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 1;
   top: 0;
   bottom: 0;
@@ -3086,9 +3103,11 @@ body:has(#preloader.loaded) .place-for-btn {
   z-index: 10;
   left: 20px;
 }
-#growth .growth-swiper-button-next {
+#growth .growth-swiper-button-next, #growth .growth-main-swiper-button-next {
   position: absolute;
   display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 1;
   top: 0;
   bottom: 0;
@@ -3097,24 +3116,179 @@ body:has(#preloader.loaded) .place-for-btn {
   z-index: 10;
   right: 20px;
 }
-#growth .card-software {
-  width: 666px;
+#growth .slider-wrapper {
   position: relative;
-}
-#growth .swiper-slide {
-  margin: auto;
-}
-#growth .card-image {
+  height: 412px;
+  width: 666px;
+  max-width: 100%;
   display: flex;
   align-items: center;
-  max-width: 100%;
-  min-width: 360px;
+  justify-content: center;
+  padding: 20px;
 }
-#growth .card-image img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
+@media (max-width: 768px) {
+  #growth .slider-wrapper {
+    height: 100%;
+  }
+}
+#growth .growth-support-swiper {
+  max-width: 538px;
+  width: 100%;
+  height: 234px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  #growth .growth-support-swiper {
+    height: 100%;
+  }
+}
+#growth .card-software {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  height: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.47) 100%);
+  background-clip: text;
+}
+@media (max-width: 768px) {
+  #growth .card-software {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+#growth .card-software .part {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  #growth .card-software .part.head-part {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+#growth .card-software .short-info {
+  display: flex;
+  flex-direction: column;
+}
+#growth .card-software .media {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.0509803922);
+  border-radius: 20px;
+}
+#growth .card-software .social-links {
+  display: flex;
+  gap: 8px;
+}
+#growth .card-software .social-links .text {
+  opacity: 1;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+#growth .card-software .card-title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+#growth .card-software .card-sub-title {
+  opacity: 0.7;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+#growth .card-software .text {
+  opacity: 0.7;
+  font-weight: 400;
+  font-size: 15px;
+}
+#growth .card-software .list {
+  margin-left: 20px;
+}
+#growth .card-software .list li {
+  font-weight: 400;
+  font-size: 15px;
+}
+#growth .card-software .list li::marker {
+  color: #57A6FB;
+}
+#growth .card-software .big-numer {
+  font-family: Oswald;
+  font-weight: 600;
+  font-size: 96px;
+  text-transform: uppercase;
+  line-height: 0.95em;
+  background: linear-gradient(180deg, #57A6FB 0%, #346395 100%);
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 768px) {
+  #growth .card-software .big-numer {
+    font-size: 36px;
+  }
+}
+#growth .card-software .small-text {
+  font-family: Oswald;
+  font-weight: 600;
+  font-size: 32px;
+  text-transform: uppercase;
+  line-height: 0.95em;
+  color: transparent;
+}
+@media (max-width: 768px) {
+  #growth .card-software .small-text {
+    font-size: 16px;
+  }
+}
+#growth .card-software .big-text {
+  font-family: Oswald;
+  font-size: 64px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 0.95em;
+  color: transparent;
+}
+@media (max-width: 768px) {
+  #growth .card-software .big-text {
+    font-size: 36px;
+  }
+}
+#growth .tablet-wrapper {
+  position: relative;
+  max-width: 506px;
+  width: 100%;
+}
+#growth .tablet-wrapper .growth-main-swiper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 68%;
+  height: fit-content;
+}
+#growth .tablet-wrapper .border-image {
+  pointer-events: none;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+#growth .swiper {
+  width: 100%;
+}
+#growth .swiper img {
+  width: 100%;
+  height: 100%;
 }
 
 * {
@@ -3522,7 +3696,7 @@ img {
 }
 
 .desktop {
-  display: block !important;
+  display: flex !important;
 }
 @media (max-width: 768px) {
   .desktop {
@@ -3535,7 +3709,7 @@ img {
 }
 @media (max-width: 768px) {
   .mobile {
-    display: block !important;
+    display: flex !important;
   }
 }
 
