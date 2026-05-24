@@ -1977,7 +1977,7 @@ body:has(#preloader.loaded) .place-for-btn {
   text-align: center;
   font-weight: 400;
   font-size: 16px;
-  font-style: Italic;
+  font-style: italic;
 }
 #marketing .author-block .author {
   font-weight: 600;
@@ -1997,14 +1997,21 @@ body:has(#preloader.loaded) .place-for-btn {
   max-width: 220px;
   max-height: 220px;
 }
-#marketing .container .pin.pin-pack {
-  max-width: 450px;
-  max-height: 450px;
-}
 #marketing .container .pin img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+#marketing .container .pin {
+  transition: 1.8s transform ease 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  will-change: transform;
+}
+#marketing .container .pin.pin-pack {
+  max-width: 450px;
+  max-height: 450px;
 }
 #marketing .container .pin.pp-1 {
   width: 470px;
@@ -2012,6 +2019,8 @@ body:has(#preloader.loaded) .place-for-btn {
   right: 0;
   bottom: 17%;
   z-index: -1;
+  animation-name: float-1;
+  animation-duration: 8s;
 }
 @media (max-width: 768px) {
   #marketing .container .pin.pp-1 {
@@ -2024,6 +2033,8 @@ body:has(#preloader.loaded) .place-for-btn {
   left: -3%;
   bottom: 9%;
   z-index: -2;
+  animation-name: float-2;
+  animation-duration: 10s;
 }
 @media (max-width: 768px) {
   #marketing .container .pin.pp-2 {
@@ -2037,6 +2048,8 @@ body:has(#preloader.loaded) .place-for-btn {
   right: 3%;
   bottom: 13%;
   z-index: -4;
+  animation-name: float-3;
+  animation-duration: 7s;
 }
 @media (max-width: 768px) {
   #marketing .container .pin.pp-3 {
@@ -2049,6 +2062,8 @@ body:has(#preloader.loaded) .place-for-btn {
   right: 0;
   top: 0;
   z-index: -4;
+  animation-name: float-4;
+  animation-duration: 9s;
 }
 @media (max-width: 768px) {
   #marketing .container .pin.p-1 {
@@ -2059,6 +2074,8 @@ body:has(#preloader.loaded) .place-for-btn {
   right: 19%;
   top: 40%;
   z-index: -5;
+  animation-name: float-5;
+  animation-duration: 11s;
 }
 @media (max-width: 768px) {
   #marketing .container .pin.p-2 {
@@ -2070,6 +2087,8 @@ body:has(#preloader.loaded) .place-for-btn {
   left: 3%;
   top: 18%;
   z-index: -6;
+  animation-name: float-6;
+  animation-duration: 12s;
 }
 @media (max-width: 768px) {
   #marketing .container .pin.p-3 {
@@ -2077,45 +2096,153 @@ body:has(#preloader.loaded) .place-for-btn {
   }
 }
 #marketing .p-1 {
-  transform: translate(50%, 42%);
+  --start-transform: translate(50%,42%);
+  transform: var(--start-transform);
 }
 #marketing .p-2 {
-  transform: translate(40%, -30%);
+  --start-transform: translate(40%,-30%);
+  transform: var(--start-transform);
 }
 #marketing .p-3 {
-  transform: translate(-53%, 20%);
+  --start-transform: translate(-53%,20%);
+  transform: var(--start-transform);
 }
 #marketing .pp-1 {
-  transform: scale(0.6) translate(0, -5%) rotate(-12deg);
+  --start-transform: scale(0.6) translate(0,-5%) rotate(-12deg);
+  transform: var(--start-transform);
 }
 #marketing .pp-2 {
-  transform: scale(0.6) translate(13%, 0) rotate(4deg);
+  --start-transform: scale(0.6) translate(13%,0) rotate(4deg);
+  transform: var(--start-transform);
 }
 #marketing .pp-3 {
-  transform: scale(0.6) translate(-6%, 0) rotate(8deg);
-}
-#marketing .pin {
-  transition: 1.8s transform ease 0.5s;
+  --start-transform: scale(0.6) translate(-6%,0) rotate(8deg);
+  transform: var(--start-transform);
 }
 #marketing.anim .p-1 {
-  transform: translate(0, 0);
+  --start-transform: translate(0,0);
+  transform: var(--start-transform);
 }
 #marketing.anim .p-2 {
-  transform: translate(0, 0);
+  --start-transform: translate(0,0);
+  transform: var(--start-transform);
 }
 #marketing.anim .p-3 {
-  transform: translate(0, 0);
+  --start-transform: translate(0,0);
+  transform: var(--start-transform);
 }
 #marketing.anim .pp-1 {
-  transform: scale(1) translate(0, 0) rotate(16.8deg);
+  --start-transform: scale(1) translate(0,0) rotate(16.8deg);
+  transform: var(--start-transform);
 }
 #marketing.anim .pp-2 {
-  transform: scale(1) translate(0, 0) rotate(-15deg);
+  --start-transform: scale(1) translate(0,0) rotate(-15deg);
+  transform: var(--start-transform);
 }
 #marketing.anim .pp-3 {
-  transform: scale(1) translate(0, 0) rotate(-7deg);
+  --start-transform: scale(1) translate(0,0) rotate(-7deg);
+  transform: var(--start-transform);
 }
 
+@keyframes float-1 {
+  0% {
+    transform: var(--start-transform) translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: var(--start-transform) translate(8px, -6px) rotate(1deg);
+  }
+  50% {
+    transform: var(--start-transform) translate(-6px, 8px) rotate(-1deg);
+  }
+  75% {
+    transform: var(--start-transform) translate(10px, 4px) rotate(1deg);
+  }
+  100% {
+    transform: var(--start-transform) translate(-4px, -8px) rotate(-1deg);
+  }
+}
+@keyframes float-2 {
+  0% {
+    transform: var(--start-transform) translate(0px, 0px);
+  }
+  25% {
+    transform: var(--start-transform) translate(-10px, 5px);
+  }
+  50% {
+    transform: var(--start-transform) translate(6px, -10px);
+  }
+  75% {
+    transform: var(--start-transform) translate(-5px, -4px);
+  }
+  100% {
+    transform: var(--start-transform) translate(8px, 7px);
+  }
+}
+@keyframes float-3 {
+  0% {
+    transform: var(--start-transform) translate(0px, 0px) rotate(0deg);
+  }
+  30% {
+    transform: var(--start-transform) translate(7px, 8px) rotate(-1deg);
+  }
+  60% {
+    transform: var(--start-transform) translate(-8px, -5px) rotate(1deg);
+  }
+  100% {
+    transform: var(--start-transform) translate(5px, -7px) rotate(-1deg);
+  }
+}
+@keyframes float-4 {
+  0% {
+    transform: var(--start-transform) translate(0px, 0px);
+  }
+  20% {
+    transform: var(--start-transform) translate(5px, -8px);
+  }
+  50% {
+    transform: var(--start-transform) translate(-7px, 5px);
+  }
+  80% {
+    transform: var(--start-transform) translate(8px, 4px);
+  }
+  100% {
+    transform: var(--start-transform) translate(-5px, -5px);
+  }
+}
+@keyframes float-5 {
+  0% {
+    transform: var(--start-transform) translate(0px, 0px);
+  }
+  25% {
+    transform: var(--start-transform) translate(-8px, -5px);
+  }
+  50% {
+    transform: var(--start-transform) translate(10px, 7px);
+  }
+  75% {
+    transform: var(--start-transform) translate(-4px, 9px);
+  }
+  100% {
+    transform: var(--start-transform) translate(6px, -6px);
+  }
+}
+@keyframes float-6 {
+  0% {
+    transform: var(--start-transform) translate(0px, 0px);
+  }
+  20% {
+    transform: var(--start-transform) translate(6px, 6px);
+  }
+  40% {
+    transform: var(--start-transform) translate(-10px, -4px);
+  }
+  70% {
+    transform: var(--start-transform) translate(5px, -9px);
+  }
+  100% {
+    transform: var(--start-transform) translate(-6px, 8px);
+  }
+}
 #attention .attention-wrapper {
   display: grid;
   grid-auto-columns: 1fr;
@@ -2323,6 +2450,15 @@ body:has(#preloader.loaded) .place-for-btn {
 
 #cap {
   overflow: hidden;
+}
+#cap .shadow {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(4, 5, 6) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
 }
 #cap .container {
   min-height: 90vh;
@@ -2862,6 +2998,15 @@ body:has(#preloader.loaded) .place-for-btn {
   opacity: 1;
   animation: mario-pop 1s ease-out forwards;
 }
+#days .day.active:nth-child(5) {
+  transform: translateY(-30px);
+}
+#days .day.active:nth-child(6) {
+  transform: translateY(-60px);
+}
+#days .day.active:nth-child(7) {
+  transform: translateY(-90px);
+}
 @keyframes mario-pop {
   0% {
     opacity: 0.7;
@@ -3355,6 +3500,7 @@ body:has(#preloader.loaded) .place-for-btn {
 }
 #growth .tablet-wrapper .growth-main-swiper {
   position: absolute;
+  z-index: 4;
   left: 0;
   right: 0;
   top: 0;

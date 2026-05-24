@@ -22,5 +22,7 @@
         </div>
 
     </div>
+
+    <div class="shadow"></div>
 </section>
 <script src="./assets/scripts/cap.js"></script>
