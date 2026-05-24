@@ -8,16 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cards = [...workflow.querySelectorAll(".card-wrapper")];
 
-    const LINE_OFFSET = 14;
-    const EXIT_OFFSET = 14;
+    const LINE_OFFSET = 0;
+    const EXIT_OFFSET = 0;
     const DURATION = 12000;
 
     let started = false;
     let animationId = null;
     let currentProgress = 0;
 
-    // Вместо флага паузы — храним "виртуальное время" старта
-    // чтобы можно было пересчитать в любой момент
     let virtualStartTime = null;
     let isDragging = false;
     let dragStartX = 0;
@@ -62,14 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // =========================
-    // SEEK — пересчитать virtualStartTime под текущий progress
-    // вызывать каждый раз когда меняем progress вручную
+    // SEEK
     // =========================
     function seekTo(progress, now) {
         currentProgress = Math.max(0, Math.min(1, progress));
         render(currentProgress);
-        // Пересчитываем виртуальный старт так, чтобы elapsed = progress * DURATION
         virtualStartTime = now - currentProgress * DURATION;
+
+        // Если перемотали назад — перезапускаем анимацию
+        if (currentProgress < 1 && !animationId) {
+            animationId = requestAnimationFrame(tick);
+        }
     }
 
     // =========================
@@ -82,8 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const elapsed = time - virtualStartTime;
-            // loop: когда дошли до конца — заново с 0
-            const progress = (elapsed % DURATION) / DURATION;
+            const progress = Math.min(elapsed / DURATION, 1);
+
+            if (progress >= 1) {
+                render(1);
+                cancelAnimationFrame(animationId);
+                animationId = null;
+                return;
+            }
 
             render(progress);
         }
@@ -126,9 +133,15 @@ document.addEventListener("DOMContentLoaded", () => {
         isDragging = false;
         wrapper.style.cursor = "grab";
 
-        // ключевой момент: пересчитываем virtualStartTime
-        // чтобы анимация продолжила с текущей позиции
         virtualStartTime = now - currentProgress * DURATION;
+
+        // Если дотащили до конца — не запускаем анимацию заново
+        if (currentProgress >= 1) return;
+
+        // Если анимация была остановлена — возобновляем
+        if (!animationId) {
+            animationId = requestAnimationFrame(tick);
+        }
     }
 
     // Mouse
@@ -158,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // =========================
-    // CLICK TO SEEK (на таймлайне)
+    // CLICK TO SEEK
     // =========================
     timelineWrapper.addEventListener("click", (e) => {
         if (dragMoved) return;
