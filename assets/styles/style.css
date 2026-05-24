@@ -3507,7 +3507,7 @@ body:has(#preloader.loaded) .place-for-btn {
   bottom: 0;
   margin: auto;
   width: 68%;
-  height: max-content;
+  height: 81%;
 }
 #growth .tablet-wrapper .border-image {
   pointer-events: none;
@@ -3517,10 +3517,6 @@ body:has(#preloader.loaded) .place-for-btn {
 }
 #growth .swiper {
   width: 100%;
-}
-#growth .swiper img {
-  width: 100%;
-  height: 100%;
 }
 
 * {
