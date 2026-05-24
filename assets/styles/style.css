@@ -2859,6 +2859,7 @@ body:has(#preloader.loaded) .place-for-btn {
   transform: translateY(300%);
 }
 #days .day.active .info {
+  opacity: 1;
   animation: mario-pop 1s ease-out forwards;
 }
 @keyframes mario-pop {

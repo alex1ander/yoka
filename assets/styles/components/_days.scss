@@ -140,7 +140,8 @@
 
   &.active {
     .info {
-      animation: mario-pop 1.0s ease-out forwards;
+        opacity: 1;
+        animation: mario-pop 1.0s ease-out forwards;
     }
   }
 }

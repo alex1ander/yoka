@@ -6,17 +6,21 @@ const progress = document.querySelector('.days-progress');
 
 
 // SETTINGS
-const loopEnabled = false;
+const loopEnabled = true;
 const itemDuration = 0.8;
-const pauseBeforeScroll = 2;
+const pauseBeforeScroll = 1.2;
+const animationSpeed = 0.8; // 0.5 = медленнее, 2 = быстрее
 
 
 // TIMES
-const scrollDuration = days.length * itemDuration;
+const scrollDuration = (days.length * itemDuration) / animationSpeed;
 const totalDuration = scrollDuration + pauseBeforeScroll;
 
 let startTime = null;
 let finished = false;
+let isRunning = false;
+let rafId = null;
+
 
 function resetState() {
 
@@ -48,7 +52,7 @@ function finishAnimation() {
 
 function loop(timestamp) {
 
-    if (finished) return;
+    if (!isRunning) return;
 
     if (!startTime) startTime = timestamp;
 
@@ -70,6 +74,7 @@ function loop(timestamp) {
 
             finishAnimation();
             finished = true;
+            isRunning = false;
             return;
         }
     }
@@ -77,7 +82,7 @@ function loop(timestamp) {
     // PROGRESS LINE
     fill.style.width = `${cycleProgress * 100}%`;
 
-    // DELAY BEFORE MOVE
+    // DELAY BEFORE MOVE (только для скролла)
     let scrollProgress = 0;
 
     if (elapsed > pauseBeforeScroll) {
@@ -85,6 +90,9 @@ function loop(timestamp) {
     }
 
     scrollProgress = Math.min(scrollProgress, 1);
+
+    // Прогресс для классов — без задержки
+    const classProgress = Math.min(elapsed / totalDuration, 1);
 
     // SIZES
     const wrapperWidth = wrapper.scrollWidth;
@@ -98,7 +106,7 @@ function loop(timestamp) {
     wrapper.style.transform = `translate3d(${translateX}px,0,0)`;
 
     // ACTIVE
-    const itemsToShow = Math.floor(scrollProgress * days.length);
+    const itemsToShow = Math.floor(classProgress * days.length);
 
     days.forEach((day, index) => {
 
@@ -116,30 +124,54 @@ function loop(timestamp) {
     // =========================
 
     const fillRect = fill.getBoundingClientRect();
-    const progressRect = progress.getBoundingClientRect();
-
-    // текущая X координата конца полосы
     const lineX = fillRect.right;
 
     days.forEach(day => {
 
         const rect = day.getBoundingClientRect();
-
-        // центр карточки
         const cardX = rect.left + rect.width / 2;
 
-        // если линия дошла до карточки
         if (lineX >= cardX) {
-
             if (!day.classList.contains('anim')) {
                 day.classList.add('anim');
             }
-
         }
 
     });
 
-    requestAnimationFrame(loop);
+    rafId = requestAnimationFrame(loop);
 }
 
-requestAnimationFrame(loop);
+function startAnimation() {
+    if (isRunning || finished) return;
+
+    isRunning = true;
+    startTime = null;
+    rafId = requestAnimationFrame(loop);
+}
+
+function stopAnimation() {
+    isRunning = false;
+
+    if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+    }
+}
+
+
+// OBSERVER
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            startAnimation();
+        } else {
+            // stopAnimation(); // раскомментить если нужно останавливать при выходе из экрана
+        }
+    });
+}, {
+    rootMargin: '-45% 0px -45% 0px',
+    threshold: 0
+});
+
+observer.observe(contentWrapper);
