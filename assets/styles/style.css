@@ -3518,6 +3518,10 @@ body:has(#preloader.loaded) .place-for-btn {
 #growth .swiper {
   width: 100%;
 }
+#growth .swiper img {
+  width: 100%;
+  height: 100%;
+}
 
 * {
   padding: 0;
