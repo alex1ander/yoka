@@ -2711,27 +2711,44 @@ body:has(#preloader.loaded) .place-for-btn {
 }
 
 #days .content {
+  max-width: 100%;
   overflow: hidden;
-  padding-top: 60px;
   margin-top: 0;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+#days .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
 }
 #days .container {
-  max-width: 1296px;
+  min-height: 460px;
+  position: relative;
 }
 #days {
   margin-bottom: 120px;
 }
 #days .days-wrapper {
-  width: 100%;
+  position: relative;
+  height: -webkit-fill-available;
+  width: max-content;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 20px;
   will-change: scroll-position;
+  padding-bottom: 60px;
 }
 #days .days-wrapper .day {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   gap: 20px;
+  margin: 0 10px;
 }
 #days .days-wrapper .day .info {
   position: relative;
@@ -2809,8 +2826,10 @@ body:has(#preloader.loaded) .place-for-btn {
   text-transform: uppercase;
 }
 #days .days-progress {
-  position: relative;
-  margin-top: 40px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
   height: 4px;
 }
 #days .days-progress__line {
@@ -2830,6 +2849,10 @@ body:has(#preloader.loaded) .place-for-btn {
   filter: blur(1px);
   border-radius: 999px;
   transition: width 0.05s linear;
+}
+#days .days-progress .content-wrapper {
+  overflow: hidden;
+  position: relative;
 }
 #days .day .info {
   opacity: 0.7;

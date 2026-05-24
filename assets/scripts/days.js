@@ -1,44 +1,142 @@
+const contentWrapper = document.querySelector('.content-wrapper');
 const wrapper = document.querySelector('.days-wrapper');
 const days = Array.from(document.querySelectorAll('.day'));
 const fill = document.querySelector('.days-progress__fill');
+const progress = document.querySelector('.days-progress');
 
-const itemDuration = 0.8; // 0.5 сек на карточку
-const totalDuration = days.length * itemDuration; // общая длительность
+
+// SETTINGS
+const loopEnabled = false;
+const itemDuration = 0.8;
+const pauseBeforeScroll = 2;
+
+
+// TIMES
+const scrollDuration = days.length * itemDuration;
+const totalDuration = scrollDuration + pauseBeforeScroll;
 
 let startTime = null;
+let finished = false;
+
+function resetState() {
+
+    days.forEach(day => {
+        day.classList.remove('active');
+        day.classList.remove('anim');
+    });
+
+    wrapper.style.transform = `translate3d(0px,0,0)`;
+    fill.style.width = `0%`;
+}
+
+function finishAnimation() {
+
+    fill.style.width = `100%`;
+
+    const wrapperWidth = wrapper.scrollWidth;
+    const visibleWidth = contentWrapper.clientWidth;
+
+    const maxTranslate = Math.max(0, wrapperWidth - visibleWidth);
+
+    wrapper.style.transform = `translate3d(${-maxTranslate}px,0,0)`;
+
+    days.forEach(day => {
+        day.classList.add('active');
+        day.classList.add('anim');
+    });
+}
 
 function loop(timestamp) {
+
+    if (finished) return;
+
     if (!startTime) startTime = timestamp;
 
-    const elapsed = (timestamp - startTime) / 1000; // в секундах
+    const elapsed = (timestamp - startTime) / 1000;
 
-    // нормализованный прогресс 0..1
-    let progress = elapsed / totalDuration;
+    let cycleProgress = elapsed / totalDuration;
 
-    if (progress > 1) {
-        progress = 0;
-        startTime = timestamp;
-        days.forEach(d => d.classList.remove('active'));
+    // END
+    if (cycleProgress >= 1) {
+
+        if (loopEnabled) {
+
+            cycleProgress = 0;
+            startTime = timestamp;
+
+            resetState();
+
+        } else {
+
+            finishAnimation();
+            finished = true;
+            return;
+        }
     }
 
-    const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+    // PROGRESS LINE
+    fill.style.width = `${cycleProgress * 100}%`;
 
-    // 1. плавный скролл (без накопления ошибок)
-    const scrollX = maxScroll * progress;
-    wrapper.scrollLeft = scrollX;
+    // DELAY BEFORE MOVE
+    let scrollProgress = 0;
 
-    // 2. прогресс бар
-    fill.style.width = (progress * 100) + '%';
+    if (elapsed > pauseBeforeScroll) {
+        scrollProgress = (elapsed - pauseBeforeScroll) / scrollDuration;
+    }
 
-    // 3. появление карточек по времени (НЕ по scroll)
-    const itemsToShow = Math.floor(progress * days.length);
+    scrollProgress = Math.min(scrollProgress, 1);
+
+    // SIZES
+    const wrapperWidth = wrapper.scrollWidth;
+    const visibleWidth = contentWrapper.clientWidth;
+
+    const maxTranslate = Math.max(0, wrapperWidth - visibleWidth);
+
+    // MOVE
+    const translateX = -(maxTranslate * scrollProgress);
+
+    wrapper.style.transform = `translate3d(${translateX}px,0,0)`;
+
+    // ACTIVE
+    const itemsToShow = Math.floor(scrollProgress * days.length);
 
     days.forEach((day, index) => {
+
         if (index <= itemsToShow) {
             day.classList.add('active');
         } else {
             day.classList.remove('active');
+            day.classList.remove('anim');
         }
+
+    });
+
+    // =========================
+    // ANIM WHEN BAR == CARD
+    // =========================
+
+    const fillRect = fill.getBoundingClientRect();
+    const progressRect = progress.getBoundingClientRect();
+
+    // текущая X координата конца полосы
+    const lineX = fillRect.right;
+
+    days.forEach(day => {
+
+        const rect = day.getBoundingClientRect();
+
+        // центр карточки
+        const cardX = rect.left + rect.width / 2;
+
+        // если линия дошла до карточки
+        if (lineX >= cardX) {
+
+            if (!day.classList.contains('anim')) {
+                day.classList.add('anim');
+            }
+
+        }
+
     });
 
     requestAnimationFrame(loop);
