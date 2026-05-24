@@ -1,7 +1,6 @@
 <section id="workflow" class="section-container bg-image-container">
-
     <div class="container bg-image-container container-p0">
-
+        <img class="bg-image" src="./assets/images/bg-workflow.png" alt="">
         <div class="title-block">
             <h3>THE <span class="blue-text">CREATIVE</span> WORKFLOW</h3>
         </div>
