@@ -19,7 +19,7 @@
                     </div>
                     <div class="info-part">
                         <div class="text-part">
-                            <h3>Initial Perception</h3>
+                            <h3>Initial<br> Perception</h3>
                             <p>Unconscious perception: abstract, clean, overloaded, contrasting light and dark.</p>
                         </div>
                         <ul class="benefit-list">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="info-part">
                         <div class="text-part">
-                            <h3>Initial Perception</h3>
+                            <h3>Initial<br> Perception</h3>
                             <p>Unconscious perception: abstract, clean, overloaded, contrasting light and dark.</p>
                         </div>
                         <ul class="benefit-list">

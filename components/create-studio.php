@@ -16,7 +16,7 @@
 
             <div class="btn-transparent">
                 <span>EXPLORE FULL PORTFOLIO</span>
-                <div class="circle">
+                <div id="create-start-anim" class="circle">
                     <svg width="24" height="24">
                         <use href="#play"></use>
                     </svg>

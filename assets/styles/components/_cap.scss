@@ -69,12 +69,16 @@
     // осколки
     .shards {
         z-index: -2;
-
+          will-change: transform;
+        @include mobile{
+            animation: floatCircle 12s ease-in-out infinite;
+        }
         img {
             object-fit: contain;
             opacity: 0.9;
         }
     }
+    
 
     // кубок
     .trophy {
@@ -99,4 +103,26 @@
             }
         }
     }
+}
+
+@keyframes floatCircle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  25% {
+    transform: translate(12px, -8px);
+  }
+
+  50% {
+    transform: translate(0px, -16px);
+  }
+
+  75% {
+    transform: translate(-12px, -8px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
 }

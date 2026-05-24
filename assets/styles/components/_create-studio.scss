@@ -27,7 +27,8 @@
             font-size: 14px;
         }
         .circle{
-               @include glass-effect();
+                cursor: pointer;
+                @include glass-effect();
                 justify-content: center;
                 background: rgb(255 255 255 / 12%);
                 padding: 13px;
@@ -49,6 +50,11 @@
 
     .create-card{
         margin: 0 20px;
+
+        transition: 0.4s ease transform;
+        &:hover{
+            transform: translate(0, -12%);
+        }
         .image-wrapper{
             height: 463px;
             width: 264px;
@@ -74,7 +80,9 @@
         }
     }
 
-
+    .create-swiper{
+        overflow: visible;
+    }
     .create-swiper-button-prev{
         position: absolute;
         display: flex;

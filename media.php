@@ -13,7 +13,7 @@
 
 
     <?php include 'header.php'; ?>
-    <main>
+    <main class="media">
         <?php include 'components/marketing.php'; ?>
         <?php include 'components/attention.php'; ?>
         <?php include 'components/cap.php'; ?>

@@ -1948,11 +1948,11 @@ body:has(#preloader.loaded) .place-for-btn {
   align-items: center;
 }
 #marketing .top-part {
-  margin-top: 10%;
+  margin-top: 8%;
 }
 @media (max-width: 768px) {
   #marketing .top-part {
-    margin-top: 23%;
+    margin-top: 20%;
   }
 }
 @media (max-width: 768px) {
@@ -2131,8 +2131,8 @@ body:has(#preloader.loaded) .place-for-btn {
 @media (max-width: 768px) {
   #attention .attention-wrapper {
     grid-template-columns: 1fr;
-    gap: 160px;
-    margin: 160px 0px 20px;
+    gap: 360px;
+    margin: 360px 0px 20px;
   }
 }
 #attention .phone-part {
@@ -2178,7 +2178,7 @@ body:has(#preloader.loaded) .place-for-btn {
 @media (max-width: 768px) {
   #attention .phone-part {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 2fr 3fr;
     padding-left: 20px;
     gap: 24px;
   }
@@ -2274,8 +2274,8 @@ body:has(#preloader.loaded) .place-for-btn {
 }
 #attention .phone-part .place-for-image .phone-img {
   position: absolute;
-  height: 150%;
-  width: auto;
+  height: auto;
+  width: 80%;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -2375,6 +2375,12 @@ body:has(#preloader.loaded) .place-for-btn {
 }
 #cap .shards {
   z-index: -2;
+  will-change: transform;
+}
+@media (max-width: 768px) {
+  #cap .shards {
+    animation: floatCircle 12s ease-in-out infinite;
+  }
 }
 #cap .shards img {
   object-fit: contain;
@@ -2403,6 +2409,23 @@ body:has(#preloader.loaded) .place-for-btn {
   }
 }
 
+@keyframes floatCircle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(12px, -8px);
+  }
+  50% {
+    transform: translate(0px, -16px);
+  }
+  75% {
+    transform: translate(-12px, -8px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
 #ways .ways-circle {
   display: flex;
   width: 100%;
@@ -2416,6 +2439,7 @@ body:has(#preloader.loaded) .place-for-btn {
   filter: drop-shadow(0 0 2rem #57A6FB);
 }
 #ways .ways-wrapper {
+  width: 100%;
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -2832,6 +2856,7 @@ body:has(#preloader.loaded) .place-for-btn {
   font-size: 14px;
 }
 #create-studio .btn-transparent .circle {
+  cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
@@ -2879,6 +2904,10 @@ body:has(#preloader.loaded) .place-for-btn {
 }
 #create-studio .create-card {
   margin: 0 20px;
+  transition: 0.4s ease transform;
+}
+#create-studio .create-card:hover {
+  transform: translate(0, -12%);
 }
 #create-studio .create-card .image-wrapper {
   height: 463px;
@@ -2902,6 +2931,9 @@ body:has(#preloader.loaded) .place-for-btn {
   text-align: center;
   width: 100%;
   margin-top: 18px;
+}
+#create-studio .create-swiper {
+  overflow: visible;
 }
 #create-studio .create-swiper-button-prev {
   position: absolute;
@@ -3361,6 +3393,12 @@ main {
 }
 .section-container .btn {
   min-width: 224px;
+}
+
+.media .btn {
+  min-width: 211px;
+  min-height: 48px;
+  padding: 15px 13px;
 }
 
 img {

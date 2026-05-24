@@ -1,7 +1,7 @@
 <section id="marketing" class="section-container bg-image-container">
 
 
-    <img class="bg-image pos-bottom" src="./assets/images/marketing-bg.png" alt="">
+    <img class="bg-image" src="./assets/images/marketing-bg.png" alt="">
 
     <div class="container">
 

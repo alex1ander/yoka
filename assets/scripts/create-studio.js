@@ -9,3 +9,7 @@ const createSwiper = new Swiper(".create-swiper", {
         
     },
 });
+
+document.getElementById('create-start-anim').addEventListener('click', function () {
+    document.getElementById('create-studio').classList.toggle('anim');
+});
