@@ -41,6 +41,9 @@
                                             <div class="text">CPA $4.50</div>
                                         </div>
                                     </div>
+
+                                    <div class="line-delimer"></div>
+
                                     <div class="part">
                                         <h4 class="card-title">SOFTWARE & SAAS</h4>
                                         <span class="card-sub-title">FinTech Mobile App</span>

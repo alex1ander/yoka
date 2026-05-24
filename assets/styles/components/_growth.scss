@@ -76,7 +76,7 @@
         position: relative;
         display: flex;
         justify-content: space-between;
-        gap: 60px;
+        gap: 30px;
         height: 100%;           // ← карточка занимает всю высоту слайда
         box-sizing: border-box;
         background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.47) 100%);
@@ -85,6 +85,19 @@
         @include mobile{
             flex-direction: column;
             gap: 20px;
+        }
+
+        .line-delimer{
+            opacity: 20%;
+            height: 100%;
+            width: 1px;
+            background: #FFFFFF;
+
+
+            @include mobile{
+                height: 1px;
+                width: 100%;
+            }
         }
 
         .part {
@@ -98,6 +111,7 @@
                     flex-direction: row;
                     justify-content: flex-start;
                     align-items: center;
+                    flex-wrap: wrap;
                 }
                 
             }

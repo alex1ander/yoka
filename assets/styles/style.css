@@ -3377,7 +3377,7 @@ body:has(#preloader.loaded) .place-for-btn {
   position: relative;
   display: flex;
   justify-content: space-between;
-  gap: 60px;
+  gap: 30px;
   height: 100%;
   box-sizing: border-box;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.47) 100%);
@@ -3387,6 +3387,18 @@ body:has(#preloader.loaded) .place-for-btn {
   #growth .card-software {
     flex-direction: column;
     gap: 20px;
+  }
+}
+#growth .card-software .line-delimer {
+  opacity: 20%;
+  height: 100%;
+  width: 1px;
+  background: #FFFFFF;
+}
+@media (max-width: 768px) {
+  #growth .card-software .line-delimer {
+    height: 1px;
+    width: 100%;
   }
 }
 #growth .card-software .part {
@@ -3400,6 +3412,7 @@ body:has(#preloader.loaded) .place-for-btn {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
   }
 }
 #growth .card-software .short-info {
