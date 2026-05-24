@@ -27,6 +27,7 @@
 
         .cards-wrapper{
             display: flex;
+            justify-content: space-between;
 
             .workflow-card{
                 border-radius: 20px;
@@ -126,10 +127,13 @@
 .timeline-wrapper,
 .player-line {
     will-change: transform;
+    pointer-events: none;
+
+    user-select: none;      /* нельзя выделять */
+    -webkit-user-drag: none; /* нельзя перетягивать */
 }
 
 .card-wrapper {
-
     .workflow-card{
         border: 1px solid transparent;
         transition: 0.3s transform ease, 0.3s border-color ease;

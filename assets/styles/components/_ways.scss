@@ -2,6 +2,11 @@
 
 #ways {
 
+
+    .mobile{
+        flex-direction: column;
+    }
+
     // colors
     $pink: #F53EE1;
     $purple: #6E35D9;

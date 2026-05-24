@@ -1,6 +1,6 @@
 <section id="workflow" class="section-container bg-image-container">
 
-    <div class="container container-full bg-image-container container-p0">
+    <div class="container bg-image-container container-p0">
 
         <div class="title-block">
             <h3>THE <span class="blue-text">CREATIVE</span> WORKFLOW</h3>
@@ -9,8 +9,8 @@
             <div class="workflow-wrapper">
 
                 <div class="cards-wrapper">
-                    <?php for($i = 0; $i < 3; $i++): ?>
-                        <div class="card-wrapper">
+                    <?php for($i = 0; $i < 2; $i++): ?>
+                    <div class="card-wrapper">
                         <div class="workflow-card">
                             <div class="image-wrapper">
                                 <img src="./assets/images/workflow-1.png" alt="">
@@ -24,7 +24,6 @@
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                     <div class="card-wrapper">
                         <div class="workflow-card">
