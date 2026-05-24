@@ -3361,7 +3361,7 @@ body:has(#preloader.loaded) .place-for-btn {
   bottom: 0;
   margin: auto;
   width: 68%;
-  height: fit-content;
+  height: max-content;
 }
 #growth .tablet-wrapper .border-image {
   pointer-events: none;
